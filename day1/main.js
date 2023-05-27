@@ -1,17 +1,15 @@
 import * as fs from 'fs'
-                           
-
-fs.readFile('input2.txt', (err, data) => {
-    if (err) throw err;
-    const inp_txt = data.toString();
-    const inp_arr = inp_txt.split('\n');
-    const inp_arr1 = inp_arr.map((x) => parseInt(x));
+const data = fs.readFileSync('input2.txt')
 
 
-    let inp_arr2 = splitArrayByNaN(inp_arr1)
-    console.log(findlargest(inp_arr2))
-}
-)
+const inp_txt = data.toString();
+const inp_arr = inp_txt.split('\n');
+const inp_arr1 = inp_arr.map((x) => parseInt(x));
+
+let inp_arr2 = splitArrayByNaN(inp_arr1)
+
+console.log(findlargest(inp_arr2));
+console.log(findlargest_three(inp_arr2))
 
 function splitArrayByNaN(arr) {
     let arr2 = []
@@ -28,7 +26,26 @@ function splitArrayByNaN(arr) {
    return arr2
 }
 
+// part one 
 function findlargest(arr){
+    let arr_lar = []
+    for (let i = 0; i < arr.length; i++) {
+        arr_lar.push(arr[i].reduce((a, b) => a + b, 0))
+    }
+    
+    console.log(arr_lar);
+    
+    let largest1 = 0;
+    for (let i = 0; i < arr_lar.length; i++) {
+        if (arr_lar[i] > largest1) {
+            largest1 = arr_lar[i];
+        }
+    }
+    return largest1
+}
+
+// part two
+function findlargest_three(arr){
 
     let arr_lar = []
     for (let i = 0; i < arr.length; i++) {
