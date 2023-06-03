@@ -62,4 +62,4 @@ function total_sc(num){
  total_part_two += num
 }
 
-console.log(total_part_two);
+// ans => console.log(total_part_two);
