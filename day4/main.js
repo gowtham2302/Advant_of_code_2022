@@ -27,7 +27,6 @@ function calc_pairs(arr){
     // part two
 
     if (end1 >= start2 && end2 >= start1) {
-        console.log(first_num_arr , " === " , second_num_arr);
         no_of_pairs_two++;
     }
 }
