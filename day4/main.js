@@ -25,17 +25,13 @@ function calc_pairs(arr){
     }
     
     // part two
-    
-    const min1 = Math.min(start1, end1);
-    const max1 = Math.max(start1, end1);
-    const min2 = Math.min(start2, end2);
-    const max2 = Math.max(start2, end2);
 
-    if (max1 >= min2 && max2 >= min1) {
+    if (end1 >= start2 && end2 >= start1) {
         console.log(first_num_arr , " === " , second_num_arr);
         no_of_pairs_two++;
     }
 }
+
 
 // (part one) ans => console.log(no_of_pairs_one);
 
